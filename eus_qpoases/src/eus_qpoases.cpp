@@ -272,7 +272,7 @@ extern "C" {
                             double* state_min_vector, double* state_max_vector,
                             double* inequality_matrix, double* inequality_min_vector, double* inequality_max_vector,
                             int state_len, int inequality_len, PrintLevel print_level, double* ret_status) {
-    solve_qpoases_qp_common(ret,
+    return solve_qpoases_qp_common(ret,
                             eval_weight_matrix, eval_coeff_vector,
                             state_min_vector, state_max_vector,
                             inequality_matrix, inequality_min_vector, inequality_max_vector,
@@ -284,7 +284,7 @@ extern "C" {
                             double* state_min_vector, double* state_max_vector,
                             double* inequality_matrix, double* inequality_min_vector, double* inequality_max_vector,
                             int state_len, int inequality_len, PrintLevel print_level, double* ret_status) {
-    solve_qpoases_qp_common(ret,
+    return solve_qpoases_qp_common(ret,
                             NULL, eval_coeff_vector,
                             state_min_vector, state_max_vector,
                             inequality_matrix, inequality_min_vector, inequality_max_vector,
@@ -296,7 +296,7 @@ extern "C" {
                                           double* state_min_vector, double* state_max_vector,
                                           double* inequality_matrix, double* inequality_min_vector, double* inequality_max_vector,
                                           int state_len, int inequality_len, PrintLevel print_level, double* ret_status) {
-    solve_qpoases_qp_with_hotstart_common(ret,
+    return solve_qpoases_qp_with_hotstart_common(ret,
                                           eval_weight_matrix, eval_coeff_vector,
                                           state_min_vector, state_max_vector,
                                           inequality_matrix, inequality_min_vector, inequality_max_vector,
@@ -308,7 +308,7 @@ extern "C" {
                                           double* state_min_vector, double* state_max_vector,
                                           double* inequality_matrix, double* inequality_min_vector, double* inequality_max_vector,
                                           int state_len, int inequality_len, PrintLevel print_level, double* ret_status) {
-    solve_qpoases_qp_with_hotstart_common(ret,
+    return solve_qpoases_qp_with_hotstart_common(ret,
                                           NULL, eval_coeff_vector,
                                           state_min_vector, state_max_vector,
                                           inequality_matrix, inequality_min_vector, inequality_max_vector,
@@ -320,7 +320,7 @@ extern "C" {
                                            double* state_min_vector, double* state_max_vector,
                                            double* inequality_matrix, double* inequality_min_vector, double* inequality_max_vector,
                                            int state_len, int inequality_len, PrintLevel print_level, double* ret_status) {
-    solve_qpoases_sqp_with_hotstart_common(ret,
+    return solve_qpoases_sqp_with_hotstart_common(ret,
                                            eval_weight_matrix, eval_coeff_vector,
                                            state_min_vector, state_max_vector,
                                            inequality_matrix, inequality_min_vector, inequality_max_vector,
@@ -332,7 +332,7 @@ extern "C" {
                                            double* state_min_vector, double* state_max_vector,
                                            double* inequality_matrix, double* inequality_min_vector, double* inequality_max_vector,
                                            int state_len, int inequality_len, PrintLevel print_level, double* ret_status) {
-    solve_qpoases_sqp_with_hotstart_common(ret,
+    return solve_qpoases_sqp_with_hotstart_common(ret,
                                            NULL, eval_coeff_vector,
                                            state_min_vector, state_max_vector,
                                            inequality_matrix, inequality_min_vector, inequality_max_vector,
