@@ -12,7 +12,9 @@
   <build_depend>roseus</build_depend>
   <build_depend>sensor_msgs</build_depend>
   <build_depend>std_msgs</build_depend>
-
+  <build_depend>spacenav_node</build_depend>
+  <build_depend>pr2eus</build_depend>
+  
   <exec_depend>roseus</exec_depend>
   <exec_depend>pr2eus</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
@@ -20,4 +22,6 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>tf</exec_depend>
+  <exec_depend>spacenav_node</exec_depend>
+  <build_depend>pr2eus</build_depend>
 </package>
