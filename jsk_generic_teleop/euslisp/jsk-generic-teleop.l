@@ -60,6 +60,14 @@
   (if (not (member arm *jgt-updated-arms*))
       (setq *jgt-updated-arms* (cons arm *jgt-updated-arms*))))
 
+(defun jgt-relative-device-p ()
+  (or (eq *jgt-device-type* :spacenav) (eq *jgt-device-type* :joy)))
+
+(defun jgt-copy-coords-alist (alist)
+  (mapcar #'(lambda (cell)
+              (cons (car cell) (send (cdr cell) :copy-worldcoords)))
+          alist))
+
 (defun jgt-to-float-vector3 (value &optional (default #f(0 0 0)))
   (cond
    ((vectorp value) (float-vector (elt value 0) (elt value 1) (elt value 2)))
@@ -315,12 +323,22 @@
       (not (send *jgt-robot* :self-collision-check))))
 
 (defun jgt-run-ik-step ()
-  (setq *jgt-updated-arms* nil)
-  (jgt-update-targets)
-  (dolist (arm *jgt-arms*)
-    (let ((target (jgt-alist-get arm *jgt-target-coords-alist*)))
-      (when target
-        (jgt-solve-arm-ik arm target))))
+  (let ((prev-target-coords-alist (jgt-copy-coords-alist *jgt-target-coords-alist*))
+        (failed-arms nil))
+    (setq *jgt-updated-arms* nil)
+    (jgt-update-targets)
+    (dolist (arm *jgt-arms*)
+      (let ((target (jgt-alist-get arm *jgt-target-coords-alist*)))
+        (when target
+          (unless (jgt-solve-arm-ik arm target)
+            (setq failed-arms (cons arm failed-arms))))))
+    (when (jgt-relative-device-p)
+      (dolist (arm failed-arms)
+        (when (member arm *jgt-updated-arms*)
+          (let ((prev-target (jgt-alist-get arm prev-target-coords-alist)))
+            (if prev-target
+                (setq *jgt-target-coords-alist*
+                      (jgt-alist-set arm prev-target *jgt-target-coords-alist*))))))))
   (send *ri* :angle-vector (send *jgt-robot* :angle-vector) *jgt-send-time* nil 0 :min-time 0)
   (jgt-debug-update-arrows-if-needed))
 
