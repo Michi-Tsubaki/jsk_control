@@ -18,7 +18,6 @@
   <exec_depend>roseus</exec_depend>
   <exec_depend>pr2eus</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>omni_msgs</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>tf</exec_depend>

@@ -8,7 +8,6 @@
 (ros::roseus-add-msgs "geometry_msgs")
 (ros::roseus-add-msgs "sensor_msgs")
 (ros::roseus-add-msgs "std_msgs")
-(ros::roseus-add-msgs "omni_msgs")
 
 (defvar *jgt-robot* nil)
 (defvar *jgt-arms* '(:larm :rarm))
