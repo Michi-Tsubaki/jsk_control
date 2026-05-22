@@ -4,10 +4,11 @@
 
 (ros::load-ros-manifest "geometry_msgs")
 (ros::load-ros-manifest "sensor_msgs")
-(ros::load-ros-manifest "std_msgs")
+(ros::load-ros-manifest "omni_msgs")
 (ros::roseus-add-msgs "geometry_msgs")
 (ros::roseus-add-msgs "sensor_msgs")
-(ros::roseus-add-msgs "std_msgs")
+(ros::roseus-add-msgs "omni_msgs")
+
 
 (defvar *jgt-robot* nil)
 (defvar *jgt-arms* '(:larm :rarm))

@@ -1,6 +1,6 @@
 #!/usr/bin/env roseus
 (ros::roseus "jsk_generic_g1_omni_teleop")
-(require "package://g1eus/euslisp/g1-interface.l")
+(require "package://g1eus/g1-interface.l")
 (require "package://jsk_generic_teleop/euslisp/jsk-generic-teleop.l")
 
 (g1-init)
