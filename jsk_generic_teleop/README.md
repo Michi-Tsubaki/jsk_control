@@ -5,10 +5,17 @@
 The main entry point is `jsk-generic-teleop` in `euslisp/jsk-generic-teleop.l`.
 It subscribes to one input device, updates target end-effector coordinates, solves IK on the Eus robot model, and sends the resulting angle-vector through the robot interface.
 
+
 ## Supported input devices
 
 - **Touch HID/USB** `:omni`: absolute input from `omni_msgs/OmniState`
 - **Space Navigator** `:spacenav`: relative input from `sensor_msgs/Joy`
+
+
+## Dependencies
+
+The following package is released, please build manually,
+[omni_msgs](https://github.com/bharatm11/Geomagic_Touch_ROS_Drivers)
 
 
 ## Usage
