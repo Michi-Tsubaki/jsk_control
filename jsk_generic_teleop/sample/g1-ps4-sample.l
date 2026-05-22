@@ -1,7 +1,7 @@
 #!/usr/bin/env roseus
 (ros::roseus "jsk_generic_ps4_teleop")
 (require "package://jsk_generic_teleop/euslisp/jsk-generic-teleop.l")
-(require "package://g1eus/euslisp/g1-interface.l")
+(require "package://g1eus/g1-interface.l")
 
 (g1-init)
 (jsk-generic-teleop
